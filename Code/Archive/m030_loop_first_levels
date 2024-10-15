@@ -1,0 +1,14 @@
+clear
+cd '/mmfs1/data/aglinska/BC-ABCD-denoise/Code'
+addpath('~/spm12')
+load('subject_list.mat')
+
+n = length(subjects);
+for s = 1:n
+for r = 1:2
+
+disp(sprintf('%i/%i | %i/%i',s,n,r,2))
+m020_func_fist_level(s,r)
+
+end
+end
