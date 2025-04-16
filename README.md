@@ -4,6 +4,7 @@ Denoising ABCD with deepcorr
 #### Enviroment setup
 
 Python & JupyterLab
+
 ```
 python==3.8.17
 jupyterlab==4.0.2
