@@ -8,11 +8,11 @@
 #SBATCH --time=24:00:00
 #SBATCH --mem=64gb
 #SBATCH --partition=gpua100
-#SBATCH --array=0-13
+#SBATCH --array=0-14
 
 
-notebook_name='077-DeepCorr-Forrest-LIN-newINIT.ipynb'
-analysis_name='forrest-LIN-newInit-overfit-1'
+notebook_name='077-DeepCorr-Forrest-LIN.ipynb'
+analysis_name='forrest-lin-5'
 
 outdir=../Data/StudyForrest/DeepCor-papermill/${analysis_name}
 echo $outdir
