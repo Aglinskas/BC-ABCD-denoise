@@ -10,9 +10,9 @@
 #SBATCH --partition=medium
 #SBATCH --array=0-13
 
-notebook_name='110-DeepCor-YuOrig-01-dataloader-fix.ipynb'
+notebook_name='100-DeepCorr-Forrest-ablation-00-baseline.ipynb'
 
-analysis_name='YuOrig-00-DataloaderFix'
+analysis_name='fixed-seed-00-baseline-00'
 ofdir='../Data/StudyForrest/ensembles_last_CVAE/'${analysis_name}
 
 mkdir -p $ofdir
