@@ -10,9 +10,9 @@
 #SBATCH --partition=short
 #SBATCH --array=0-14
 
-notebook_name='078-DeepCorr-Forrest-ForStefano-10-8-big.ipynb'
+notebook_name='078-DeepCorr-Forrest-ForStefano-10-7-long.ipynb'
 
-analysis_name='DeepCor-Forrest-face-big-16'
+analysis_name='DeepCor-Forrest-face-long'
 ofdir='../Data/StudyForrest/ensembles_last_CVAE/'${analysis_name}
 
 mkdir -p $ofdir
