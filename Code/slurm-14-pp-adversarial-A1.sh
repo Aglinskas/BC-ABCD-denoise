@@ -7,13 +7,13 @@
 #SBATCH --gpus-per-node=1
 #SBATCH --time=24:00:00
 #SBATCH --mem=32gb
-#SBATCH --partition=anzellos
+#SBATCH --partition=gpuv100
 #SBATCH --array=0-13
 
 
 notebook_name='121-stefano_adversarial-conv-2.ipynb'
 
-analysis_name='new-stefano-conv-allSubs-rep-9'
+analysis_name='new-stefano-conv-allSubs-rep-20'
 
 outdir=../Data/StudyForrest/Stefano_adv_papermill/${analysis_name}
 echo $outdir
