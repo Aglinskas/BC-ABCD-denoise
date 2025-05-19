@@ -1,10 +1,10 @@
 #!/bin/bash
 #SBATCH --job-name=adv-pp
-#SBATCH --output=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-outputs-_%a.txt
-#SBATCH --error=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-errors-_%a.txt
+#SBATCH --output=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-2-outputs-_%a.txt
+#SBATCH --error=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-2-errors-_%a.txt
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --time=24:00:00
+#SBATCH --time=48:00:00
 #SBATCH --mem=32gb
 #SBATCH --partition=medium
 #SBATCH --array=0-13
@@ -30,7 +30,7 @@ conda init bash
 conda activate base
 
 notebook_name='121-stefano_adversarial-conv-2.ipynb'
-analysis_name='new-stefano-conv-allSubs-rep-0'
+analysis_name='new-stefano-conv-allSubs-rep-20'
 
 outdir=../Data/StudyForrest/Stefano_adv_papermill/${analysis_name}
 echo $outdir
