@@ -1,18 +1,18 @@
 #!/bin/bash
 #SBATCH --job-name=Forrest-PP-ablations
-#SBATCH --output=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/ABCD-denoise-run-papermill-outputs-_%a.txt
-#SBATCH --error=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/ABCD-denoise-run-papermill-errors-_%a.txt
+#SBATCH --output=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/ablations-noALL-papermill-outputs-_%a.txt
+#SBATCH --error=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/ablations-noALL-papermill-errors-_%a.txt
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --gpus-per-node=1
-#SBATCH --time=24:00:00
+#SBATCH --time=48:00:00
 #SBATCH --mem=32gb
 #SBATCH --partition=medium
 #SBATCH --array=0-13
 
-notebook_name='100-DeepCorr-Forrest-ablation-00-baseline.ipynb'
+notebook_name='104-DeepCorr-Forrest-ablation-06-noAll.ipynb'
+analysis_name='DeepCor-Forrest-ablations-06-noAll-3'
 
-analysis_name='fixed-seed-00-baseline-00'
 ofdir='../Data/StudyForrest/ensembles_last_CVAE/'${analysis_name}
 
 mkdir -p $ofdir

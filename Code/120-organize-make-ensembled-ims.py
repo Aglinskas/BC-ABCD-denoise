@@ -23,11 +23,14 @@ for s in np.random.permutation(np.arange(14)):
             ofn_avg = f'../Data/StudyForrest/Stefano_adv_outputs/01-signals_averaged/S{s}-R{r}-{model_names[m]}-avg.nii.gz'
             ofn_med = f'../Data/StudyForrest/Stefano_adv_outputs/01-signals_averaged/S{s}-R{r}-{model_names[m]}-med.nii.gz'
             print(f'S{s}/R{r}/M{m}')
-            if not all((os.path.exists(ofn_avg),os.path.exists(ofn_med))):                
-                ims = [ants.image_read(fn_temp.format(s=0,r=1,rep=0,model=model_names[m])) for rep in range(nreps)]
-                arr_avg = np.average(np.array([im.numpy() for im in ims]),axis=0)
-                arr_med = np.median(np.array([im.numpy() for im in ims]),axis=0)
-                im_avg = ims[0].new_image_like(arr_avg)
-                im_avg.to_filename(ofn_avg)
-                im_med = ims[0].new_image_like(arr_med)
-                im_med.to_filename(ofn_med)
+            if not all((os.path.exists(ofn_avg),os.path.exists(ofn_med))):
+                try:
+                    ims = [ants.image_read(fn_temp.format(s=0,r=1,rep=0,model=model_names[m])) for rep in range(nreps)]
+                    arr_avg = np.average(np.array([im.numpy() for im in ims]),axis=0)
+                    arr_med = np.median(np.array([im.numpy() for im in ims]),axis=0)
+                    im_avg = ims[0].new_image_like(arr_avg)
+                    im_avg.to_filename(ofn_avg)
+                    im_med = ims[0].new_image_like(arr_med)
+                    im_med.to_filename(ofn_med)
+                except:
+                    pass

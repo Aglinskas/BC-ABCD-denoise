@@ -1,33 +1,34 @@
 #!/bin/bash
 #SBATCH --job-name=adv-pp
-#SBATCH --output=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-2-outputs-_%a.txt
-#SBATCH --error=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-2-errors-_%a.txt
+#SBATCH --output=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-3-outputs-_%a.txt
+#SBATCH --error=../Data/StudyForrest/ensembles_last_CVAE/slurm_files/adv-pp-3-errors-_%a.txt
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
-#SBATCH --time=48:00:00
+#SBATCH --gpus-per-node=1
+#SBATCH --time=11:00:00
 #SBATCH --mem=32gb
-#SBATCH --partition=medium
+#SBATCH --partition=short
 #SBATCH --array=0-13
 
 
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/aglinska/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/aglinska/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/aglinska/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/aglinska/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
+# # >>> conda initialize >>>
+# # !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/home/aglinska/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/home/aglinska/anaconda3/etc/profile.d/conda.sh" ]; then
+#         . "/home/aglinska/anaconda3/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/home/aglinska/anaconda3/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# # <<< conda initialize <<<
 
-conda init bash
-conda activate base
+# conda init bash
+# conda activate base
 
 notebook_name='121-stefano_adversarial-conv-2.ipynb'
 analysis_name='new-stefano-conv-allSubs-rep-20'
