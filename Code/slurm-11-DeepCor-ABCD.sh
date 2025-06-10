@@ -6,13 +6,13 @@
 #SBATCH --ntasks=1
 #SBATCH --gpus-per-node=1
 #SBATCH --time=48:00:00
-#SBATCH --mem=32gb
+#SBATCH --mem=88gb
 #SBATCH --partition=medium
 #SBATCH --array=0-34
 
-notebook_name='082-DeepCorr-ABCD-face-03.ipynb'
+notebook_name='082-DeepCorr-ABCD-face-06.ipynb'
 
-analysis_name='DeepCor-ABCD-v5'
+analysis_name='DeepCor-ABCD-v10'
 ofdir='../Data/StudyForrest/ensembles_last_CVAE/'${analysis_name}
 
 mkdir -p $ofdir
