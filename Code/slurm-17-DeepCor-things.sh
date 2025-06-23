@@ -12,7 +12,7 @@
 
 notebook_name='151-DeepCorr-things-face-01.ipynb'
 
-analysis_name='DeepCor-things-v1'
+analysis_name='DeepCor-things-v2'
 ofdir='../Data/things/deepcor_outputs/'${analysis_name}
 
 mkdir -p $ofdir
