@@ -1,0 +1,21 @@
+# Include README and license
+include README.md
+include LICENSE
+
+# Include configuration files
+include pyproject.toml
+include conda_list.txt
+include pip_freeze.txt
+
+# Include data files in Code directory
+recursive-include Code *.nii.gz
+recursive-include Code *.sh
+
+# Include notebooks for examples (optional)
+# recursive-include Code *.ipynb
+
+# Exclude certain files
+global-exclude *.pyc
+global-exclude __pycache__
+global-exclude *.so
+global-exclude .DS_Store
